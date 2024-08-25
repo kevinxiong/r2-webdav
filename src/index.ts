@@ -134,7 +134,7 @@ async function handle_get(request: Request, bucket: R2Bucket): Promise<Response>
 			return new Response('Precondition Failed', { status: 412 });
 		} else {
 			return new Response(object.body, {
-				status: object.range ? 206 : 200,
+				status: 200,
 				headers: {
 					'Content-Type': object.httpMetadata?.contentType ?? 'application/octet-stream',
 					// TODO: Content-Length, Content-Range
