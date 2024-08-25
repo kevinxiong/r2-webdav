@@ -19,12 +19,12 @@ jobs:
           node-version: '16'  # Specify the Node.js version  
 
       - name: Install wrangler  
-        run: npm install -g wrangler  
+        run: npm install -g wrangler
 
       - name: Configure wrangler  
         run: wrangler config  
         env:  
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}  
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}  
 
       - name: Publish to Cloudflare Workers  
         run: wrangler publish  
